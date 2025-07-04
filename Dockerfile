@@ -8,6 +8,7 @@ RUN cp $(go env GOPATH)/bin/reeve-tools /usr/local/bin/
 
 FROM docker
 
+RUN apk add bash
 COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/
 COPY --chmod=755 --from=builder /usr/local/bin/reeve-tools /usr/local/bin/
 
